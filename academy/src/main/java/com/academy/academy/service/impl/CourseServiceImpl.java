@@ -67,7 +67,9 @@ public class CourseServiceImpl implements CourseService {
         if (request.getStatus() != null)
             course.setStatus(request.getStatus());
 
-        return toResponse(repository.save(course));
+        Course saved = repository.save(course);
+
+        return toResponse(saved);
     }
 
     @Override
